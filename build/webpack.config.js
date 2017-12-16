@@ -13,7 +13,8 @@ fs
   .forEach(name => {
     const html = new HtmlWebpackPlugin({
       title: name,
-      filename: `${name}/index.html`
+      filename: `${name}/index.html`,
+      chunks: [name]
     })
     demos[name] = resolve(`../demo/${name}/index.ts`)
     demoHtml.push(html)
@@ -22,7 +23,7 @@ fs
 module.exports = {
   entry: demos,
   output: {
-    filename: '[name]/js/main.js',
+    filename: '[name]/js/main-[hash].js',
     path: path.join(__dirname, '/'),
     publicPath: '/'
   },
