@@ -27,7 +27,7 @@ export const drawPosition = (ctx: CanvasRenderingContext2D, x: number, y: number
 
 export const animation = (draw: Function) => {
   const wrapDraw: FrameRequestCallback = () => {
-    draw()
+    if (draw() === false) return
     window.requestAnimationFrame(wrapDraw)
   }
   window.requestAnimationFrame(wrapDraw)

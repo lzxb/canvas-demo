@@ -15,16 +15,8 @@ const draw: Function = (x: number, y: number, width: number, height: number) => 
   ctx.restore()
   helpers.drawPosition(ctx, x, y, '#fff')
 }
-// x, y, 宽度, 厚度
+// x, y, 宽度, 高度
 draw(200, 500 / 4, 120, 120)
-// setInterval(() => {
-//   rotate = (rotate + speed) % 181
-//   draw(200, 500 / 4, 120, 120)
-// }, 1000 / 60)
-// const timer: number = requestAnimationFrame(() => {
-//   rotate = (rotate + speed) % 181
-//   draw(200, 500 / 4, 120, 120)
-// })
 helpers.animation(() => {
   rotate = (rotate + speed) % 181
   draw(200, 500 / 4, 120, 120)
